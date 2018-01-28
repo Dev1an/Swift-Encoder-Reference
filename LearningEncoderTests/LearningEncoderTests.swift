@@ -9,28 +9,60 @@
 import XCTest
 @testable import LearningEncoder
 
+class Connection: Encodable {
+	let start: String
+	let end: String
+	
+	init(endpoints: (String, String)) {
+		(start, end) = endpoints
+	}
+}
+
+class TrainConnection: Connection {
+	let trainId: String
+	let duration: Int
+	init(train: String, duration: Int, endpoints: (String, String)) {
+		trainId = train
+		self.duration = duration
+		super.init(endpoints: endpoints)
+	}
+	
+	enum CodingKeys: String, CodingKey { case trainId, duration }
+	
+	override func encode(to encoder: Encoder) throws {
+		var container = encoder.unkeyedContainer()
+		try container.encode(trainId)
+		try container.encode(duration)
+		try super.encode(to: container.superEncoder())
+	}
+}
+
 class LearningEncoderTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
     }
     
     override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
     }
     
     func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+        let encoder = JSONEncoder()
+		let myEncoder = MyEncoder()
+		let connection = TrainConnection(
+			train: "IC3200",
+			duration: 40,
+			endpoints: ("Halle", "Leuven")
+		)
+		do {
+			let data = try encoder.encode(connection)
+			print(String(data: data, encoding: .utf8)!)
+			try connection.encode(to: myEncoder)
+			print(myEncoder)
+		} catch {
+			print(error)
+		}
     }
-    
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
-    
+
 }

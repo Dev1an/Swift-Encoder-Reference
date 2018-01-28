@@ -10,6 +10,12 @@
 		74839457201CF36500562C4A /* LearningEncoder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7483944D201CF36500562C4A /* LearningEncoder.framework */; };
 		7483945C201CF36500562C4A /* LearningEncoderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7483945B201CF36500562C4A /* LearningEncoderTests.swift */; };
 		7483945E201CF36500562C4A /* LearningEncoder.h in Headers */ = {isa = PBXBuildFile; fileRef = 74839450201CF36500562C4A /* LearningEncoder.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		74839468201CF3EB00562C4A /* Encoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74839467201CF3EB00562C4A /* Encoder.swift */; };
+		7483946A201CFB2500562C4A /* Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74839469201CFB2500562C4A /* Container.swift */; };
+		7483946C201D01E700562C4A /* SingleValueContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7483946B201D01E700562C4A /* SingleValueContainer.swift */; };
+		7483946E201D072E00562C4A /* DictionaryContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7483946D201D072E00562C4A /* DictionaryContainer.swift */; };
+		74EA021D201D39E70008C9BF /* ListContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74EA021C201D39E70008C9BF /* ListContainer.swift */; };
+		74EA021F201D43790008C9BF /* ClassContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74EA021E201D43790008C9BF /* ClassContainer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +35,12 @@
 		74839456201CF36500562C4A /* LearningEncoderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LearningEncoderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7483945B201CF36500562C4A /* LearningEncoderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningEncoderTests.swift; sourceTree = "<group>"; };
 		7483945D201CF36500562C4A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		74839467201CF3EB00562C4A /* Encoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Encoder.swift; sourceTree = "<group>"; };
+		74839469201CFB2500562C4A /* Container.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Container.swift; sourceTree = "<group>"; };
+		7483946B201D01E700562C4A /* SingleValueContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleValueContainer.swift; sourceTree = "<group>"; };
+		7483946D201D072E00562C4A /* DictionaryContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryContainer.swift; sourceTree = "<group>"; };
+		74EA021C201D39E70008C9BF /* ListContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListContainer.swift; sourceTree = "<group>"; };
+		74EA021E201D43790008C9BF /* ClassContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassContainer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +84,12 @@
 			isa = PBXGroup;
 			children = (
 				74839450201CF36500562C4A /* LearningEncoder.h */,
+				74839467201CF3EB00562C4A /* Encoder.swift */,
+				74839469201CFB2500562C4A /* Container.swift */,
+				7483946B201D01E700562C4A /* SingleValueContainer.swift */,
+				74EA021E201D43790008C9BF /* ClassContainer.swift */,
+				7483946D201D072E00562C4A /* DictionaryContainer.swift */,
+				74EA021C201D39E70008C9BF /* ListContainer.swift */,
 				74839451201CF36500562C4A /* Info.plist */,
 			);
 			path = LearningEncoder;
@@ -148,6 +166,7 @@
 				TargetAttributes = {
 					7483944C201CF36500562C4A = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 					};
 					74839455201CF36500562C4A = {
@@ -196,6 +215,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				74EA021F201D43790008C9BF /* ClassContainer.swift in Sources */,
+				7483946C201D01E700562C4A /* SingleValueContainer.swift in Sources */,
+				7483946E201D072E00562C4A /* DictionaryContainer.swift in Sources */,
+				74EA021D201D39E70008C9BF /* ListContainer.swift in Sources */,
+				74839468201CF3EB00562C4A /* Encoder.swift in Sources */,
+				7483946A201CFB2500562C4A /* Container.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -333,6 +358,7 @@
 		74839462201CF36500562C4A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -348,6 +374,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.devian.LearningEncoder;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
@@ -355,6 +382,7 @@
 		74839463201CF36500562C4A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -377,6 +405,7 @@
 		74839465201CF36500562C4A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 7TD9A665TC;
@@ -391,6 +420,7 @@
 		74839466201CF36500562C4A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 7TD9A665TC;
